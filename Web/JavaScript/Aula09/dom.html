@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+    <style>
+        body{
+            background-color: rgb(68, 125, 199);
+            color: white;
+            font: normal 18pt Arial;
+        }
+    </style>
+</head>
+<body>
+    <h1>Iniciando Estudos DOM</h1>
+    <p>Aqui vai o resultado...</p>
+    <p>Aprendendo a usar o <strong>DOM</strong> em JavaScript</p>
+    <div id="msg">Clique em mim</div>
+    <div name="msg2" >Div 2</div>
+    <div class="msg3">Classe 3</div>
+    <script>
+        var p1 = window.document.getElementsByTagName('p')[0];
+        document.write('1º Parágrafo está escrito assim: ' + p1.innerText);
+        document.write("<br>")
+        var p2 = window.document.getElementsByTagName('p')[1];
+        document.write('2º Parágrafo está escrito assim: ' + p2.innerHTML);
+        p1.style.color = 'blue';
+        var d = window.document.getElementById('msg');
+        d.style.backgroundColor = 'green';
+        d.innerText = 'Estou Aguardando...'
+        var d2 = window.document.getElementsByName('msg2')[0];
+        d2.innerText = 'Olá!'
+        document.getElementsByClassName('msg3')[0].style.color = 'pink';
+        var d3 = window.document.querySelector('div#msg');
+        d3.style.color = "black"
+    </script>
+</body>
+</html>

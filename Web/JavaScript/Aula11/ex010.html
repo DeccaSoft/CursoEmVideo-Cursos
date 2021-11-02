@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DETRAN</title>
+</head>
+<body>
+    <h1>Sistema de Multas</h1>
+    Velocidade do Veículo: <input type="number" name="txtvel" id="txtvel"> Km/h
+    <input type="button" name="" id="" value="Verificar" onclick="calcular()">
+    <div id="res"></div>
+
+    <h1>Sistema de Votação</h1>
+    Digite a sua Idade: <input type="number" name="txtidade" id="txtidade"> Anos
+    <input type="button" name="" id="" value="Verificar" onclick="votar()">
+    <div id="res2"></div>
+
+    <h1>Sistema de Semanal</h1>
+    Digite o Número do Dia: <input type="number" name="txtdia" id="txtdia">
+    <input type="button" name="" id="" value="Verificar" onclick="verificar()">
+    <div id="res3"></div>
+
+    <script>
+        function calcular(){
+            var vel = Number(document.querySelector('input#txtvel').value)
+            var res = document.querySelector('div#res')
+            if(vel <= 60){
+                res.innerHTML += `<p>Parabéns, Continue dentro dos limites de Velocidade !</p>`
+            }else if(vel > 60){
+                res.innerHTML += `<p><strong>Multado!</strong> Você está acima do Vimite de Velocidade</p>`
+            }
+            res.innerHTML += `<p>Use <strong>SEMPRE</strong> o Cinto de Segurança !</p>`
+        }
+
+        function votar(){
+            var idade = Number(document.querySelector('input#txtidade').value)
+            var res2 = document.querySelector('div#res2')
+            if(idade < 16){
+                res2.innerHTML += `<p>Você <strong>NÃO</strong> pode votar ainda !</p>`
+            }else if((idade >= 16 && idade <18) || (idade > 65) ){
+                res2.innerHTML += `Voto Facultativo !`
+            }else{
+                res2.innerHTML += `<p>Voto Obrigatório !</p>`
+            }
+        }
+
+        function verificar(){
+            var dia = Number(document.querySelector('input#txtdia').value)
+            var res3 = document.querySelector('div#res3')
+            switch(dia){
+                case 0: res3.innerHTML += `<p>Domingo</p>`; break
+                case 1: res3.innerHTML += `<p>Segunda</p>`; break
+                case 2: res3.innerHTML += `<p>Terça</p>`; break
+                case 3: res3.innerHTML += `<p>Quarta</p>`; break
+                case 4: res3.innerHTML += `<p>Quinta</p>`; break
+                case 5: res3.innerHTML += `<p>Sexta</p>`; break
+                case 6: res3.innerHTML += `<p>Sábado</p>`; break
+                default: res3.innerHTML += `<p>Dia Inválido !</p>`; break
+            }
+        }
+    </script>
+</body>
+</html>

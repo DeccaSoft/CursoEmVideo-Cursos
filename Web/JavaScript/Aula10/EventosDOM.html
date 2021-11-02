@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        div#area{
+            font: normal 20pt Arial;
+            text-align: center;
+            line-height: 200px;
+            background: rgb(42, 139, 42);
+            color: white;
+            width: 200px;
+            height: 200px;
+        }
+        div#dois{
+            font: normal 20pt Arial;
+            text-align: center;
+            line-height: 200px;
+            background: rgb(42, 139, 42);
+            color: white;
+            width: 200px;
+            height: 200px;
+        }
+    </style>
+    <title>Eventos DOM</title>
+</head>
+<body>
+    <div id="area" onclick="clicar()" onmouseenter="entrar()" onmouseout="sair()">
+        Interaja...
+    </div>
+    <br>
+    <div id="dois">
+        Interaja...
+    </div>
+    <script>
+
+        function clicar(){
+            document.getElementById('area').innerText = "Clicou !"
+            document.getElementById('area').style.background = "red"
+        }
+        function entrar(){
+            document.getElementById('area').innerHTML = "Entrou !"
+            document.getElementById('area').style.background = "blue"
+        }
+        function sair(){
+            document.getElementById('area').innerHTML = "Saiu !"
+            document.getElementById('area').style.background = "rgb(42, 139, 42)"
+        }
+
+        var a = window.document.getElementById('dois')
+        a.addEventListener('click', clicar2)
+        a.addEventListener('mouseenter', entrar2)
+        a.addEventListener('mouseout', sair2)
+
+        function clicar2(){
+            document.getElementById('dois').innerText = "Clicou !"
+            document.getElementById('dois').style.background = "red"
+        }
+        function entrar2(){
+            document.getElementById('dois').innerHTML = "Entrou !"
+            document.getElementById('dois').style.background = "blue"
+        }
+        function sair2(){
+            document.getElementById('dois').innerHTML = "Saiu !"
+            document.getElementById('dois').style.background = "rgb(42, 139, 42)"
+        }
+        
+    </script>
+</body>
+</html>

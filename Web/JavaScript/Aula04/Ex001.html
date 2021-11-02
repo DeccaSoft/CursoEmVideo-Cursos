@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Olá Mundo</title>
+</head>
+<body>
+    <h1>Olá Mundo !!!</h1>
+    <p>Me Livrei da Maldição...</p>
+
+    <script>
+        //window e ; podem ser suprimidos
+        window.alert('Olá Mundo');
+        confirm('Está gostando de JavaScript?')
+
+        /*Aula 06  - Exercício 2*/
+        var nome = prompt('Qual é o seu nome?');
+        alert('Olá, ' + nome + "!")
+        document.writeln(`Seu nome tem: ${nome.length} letras<br>`)
+        document.writeln(`Em MAIUSCULAS fica: ${nome.toUpperCase()}<br>`)
+        document.writeln(`Em MAIUSCULAS fica: ${nome.toLowerCase()}<br>`)
+
+        //Aula 06 - Exercíco 3
+        var n1 = prompt("Digite um Número:")
+        var n2 = prompt("Digite outro Número:")
+        var s = n1 + n2
+        alert("Atenção: o prompt retorna uma string...")
+        alert("Portanto, n1 + n2 = " + s)
+        /* Convertendo em inteiro*/
+        s = Number.parseInt(n1) + Number(n2)
+        document.writeln("Convertendo... Soma dos Inteiros: " + s + `<br>`)
+        //Convertendo novamente em String para utilizar o placeholder(Template String).
+        document.writeln(`Canvertendo em string... O resultado da soma foi: ${s}<br>`)
+        var salario = 8350.85
+        document.write('Salário = ' + salario.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'}))
+    </script>
+</body>
+</html>
